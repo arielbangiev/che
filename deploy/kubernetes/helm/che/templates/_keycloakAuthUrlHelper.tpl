@@ -7,9 +7,9 @@
     {{- end }}
   {{- else if eq .Values.global.serverStrategy "single-host" }}
     {{- if .Values.global.tls.enabled }}
-      {{- printf "https://che-%s.%s/auth" .Release.Namespace .Values.global.ingressDomain }}
+      {{- printf "https://%s/auth" .Values.global.ingressDomain }}
     {{- else }}
-      {{- printf "http://che-%s.%s/auth" .Release.Namespace .Values.global.ingressDomain }}
+      {{- printf "http://%s/auth" .Values.global.ingressDomain }}
     {{- end }}
   {{- else }}
     {{- if .Values.global.tls.enabled }}
